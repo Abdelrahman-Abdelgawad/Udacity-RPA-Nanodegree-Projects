@@ -28,3 +28,20 @@ Walkthrough of the project:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/S39ulHRMbFA/0.jpg)](https://www.youtube.com/watch?v=S39ulHRMbFA)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Project3 - Calculate Client Security Hash
+
+Generates the security hash for each client based on their personal information.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Project4 - Personal Use Automation (Top Box Office Movies)
+
+Gets top box office movies' information in US and mails it to the user account.
+
+
+Recorded Video for the Process Running End-To-End:
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/DCeDaO9o9LI/0.jpg)](https://www.youtube.com/watch?v=DCeDaO9o9LI)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
