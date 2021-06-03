@@ -1,4 +1,4 @@
-# Project1 - Sorting Annual Reports:
+# Project1 - Sorting Annual Reports
 
 
 Description: 
