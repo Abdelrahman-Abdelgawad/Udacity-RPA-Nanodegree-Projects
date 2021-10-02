@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1933</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1619</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessCurrentTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -68,19 +68,19 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: &#xD;&#xA;Processes the provided transaction item.&#xD;&#xA;&#xD;&#xA;Pre-Condition:&#xD;&#xA;The provided transaction item is not nothing.&#xD;&#xA;&#xD;&#xA;Post-Condition:&#xD;&#xA;Transaction item is processed successfully." DisplayName="ProcessCurrentTransaction" sap:VirtualizedContainerService.HintSize="608,1868" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: &#xA;Processes the provided transaction item.&#xA;&#xA;Pre-Condition:&#xA;The provided transaction item is not nothing.&#xA;&#xA;Post-Condition:&#xA;Transaction item is processed successfully." DisplayName="ProcessCurrentTransaction" sap:VirtualizedContainerService.HintSize="498,1554" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - Start" sap:VirtualizedContainerService.HintSize="566,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ProcessCurrentTransaction Flow Start.&quot;]" />
-    <TryCatch sap2010:Annotation.AnnotationText="Try processing the item;&#xA;If done successfully, set it's status to successfull.&#xA;Exception, if couldn't process the item, initialize the used applications and set it's status to failed. " DisplayName="Try Process Current Transaction, Catch Any Exception" sap:VirtualizedContainerService.HintSize="566,1382" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message - Start" sap:VirtualizedContainerService.HintSize="456,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ProcessCurrentTransaction Flow Start.&quot;]" />
+    <TryCatch sap2010:Annotation.AnnotationText="Try processing the item;&#xA;If done successfully, set it's status to successfull.&#xA;Exception, if couldn't process the item, initialize the used applications and set it's status to failed. " DisplayName="Try Process Current Transaction, Catch Any Exception" sap:VirtualizedContainerService.HintSize="456,1068" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -89,16 +89,16 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:RetryScope sap2010:Annotation.AnnotationText="Retry for 2 times with interval 5 seconds." DisplayName="Retry Scope - Processing Current Transaction" sap:VirtualizedContainerService.HintSize="334,271" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2" RetryInterval="00:00:05">
+        <ui:RetryScope sap2010:Annotation.AnnotationText="Retry for 2 times with interval 5 seconds." DisplayName="Retry Scope - Processing Current Transaction" sap:VirtualizedContainerService.HintSize="418,769" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2" RetryInterval="00:00:05">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action - Processing Current Transaction" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Action - Processing Current Transaction" sap:VirtualizedContainerService.HintSize="376,564" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="scg:List(x:String)" Name="MovieData" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -109,7 +109,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If sap2010:Annotation.AnnotationText="Checks if the provided transaction number is nothing;&#xD;&#xA;If so, throw a system exception.&#xD;&#xA;Else, continue." Condition="[in_TransactionItem is Nothing]" DisplayName="If - Transaction Item is Nothing" sap:VirtualizedContainerService.HintSize="484,478" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If sap2010:Annotation.AnnotationText="Checks if the provided transaction number is nothing;&#xA;If so, throw a system exception.&#xA;Else, continue." Condition="[in_TransactionItem is Nothing]" DisplayName="If - Transaction Item is Nothing" sap:VirtualizedContainerService.HintSize="484,478" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -132,12 +132,8 @@
                 </Sequence>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetMovieData workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="IMDb\IMDb_GetMovieData.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_MovieURL">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_IMDbLink + in_TransactionItem.SpecificContent(&quot;Movie_URL&quot;).ToString" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_MovieData">
-                      <mva:VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="MovieData" />
-                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_MovieURL">[in_IMDbLink + in_TransactionItem.SpecificContent("Movie_URL").ToString]</InArgument>
+                    <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_MovieData">[MovieData]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="Adds the current movie's data to the movies data table." ArrayRow="[{in_TransactionItem.SpecificContent(&quot;Movie_Name&quot;).ToString, MovieData(0), MovieData(1), MovieData(2), MovieData(3), MovieData(4), MovieData(5), MovieData(6)}]" DataTable="[io_TopMoviesData]" DisplayName="Add Movie Data Row" sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
@@ -176,10 +172,10 @@
         </ui:RetryScope>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="532,1163" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -193,7 +189,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message - E" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;ProcessCurrentTransaction, An error occured while processing the current transaction:&quot;+exception.Message + Environment.NewLine +&#xD;&#xA;&quot;At Source: &quot;+exception.Source+Environment.NewLine+&#xD;&#xA;&quot;Initializing applications and retrying now.&quot;]" />
+              <ui:LogMessage DisplayName="Log Message - E" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;ProcessCurrentTransaction, An error occured while processing the current transaction:&quot;+exception.Message + Environment.NewLine +&#xA;&quot;At Source: &quot;+exception.Source+Environment.NewLine+&#xA;&quot;Initializing applications and retrying now.&quot;]" />
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke OpenApp workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="IMDb\IMDb_OpenApp.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="in_IMDbLink">[in_IMDbLink]</InArgument>
@@ -212,7 +208,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:SetTransactionStatus>
-              <If sap2010:Annotation.AnnotationText="Checks if the current transaction retry number is the maximum retry number (2);&#xD;&#xA;If so, Take a screenshot.&#xD;&#xA;Else, continue." Condition="[in_TransactionItem.RetryNo = 2]" DisplayName="If - No More Retry for the Current Transaction" sap:VirtualizedContainerService.HintSize="484,569" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap2010:Annotation.AnnotationText="Checks if the current transaction retry number is the maximum retry number (2);&#xA;If so, Take a screenshot.&#xA;Else, continue." Condition="[in_TransactionItem.RetryNo = 2]" DisplayName="If - No More Retry for the Current Transaction" sap:VirtualizedContainerService.HintSize="484,569" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -230,9 +226,7 @@
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;ProcessCurrentTransaction, The current transaction item reached the maximum retry number!&quot;]" />
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="TakeScreenshot.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Folder">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Directory.GetCurrentDirectory + &quot;\Exceptions_Screenshots&quot;" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[Directory.GetCurrentDirectory + "\Exceptions_Screenshots"]</InArgument>
                         <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
@@ -244,6 +238,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message - End" sap:VirtualizedContainerService.HintSize="566,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ProcessCurrentTransaction Flow End.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - End" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ProcessCurrentTransaction Flow End.&quot;]" />
   </Sequence>
 </Activity>

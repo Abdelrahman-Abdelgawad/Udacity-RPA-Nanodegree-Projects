@@ -6,10 +6,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1537</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1725</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetMovieData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="28">
+    <scg:List x:TypeArguments="x:String" Capacity="56">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -38,10 +38,11 @@
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -70,15 +71,15 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: &#xA;Gets data of the current movie (Storyline, Rating, Number of ratings on IMDb, Maturity Rate, Duration, Type and Date).&#xA;&#xA;Pre Condition:&#xA;An IMDb page is opened(any page)&#xA;&#xA;Post Condition:&#xA;Output movie's data is not empty." DisplayName="IMDb_GetMovieData" sap:VirtualizedContainerService.HintSize="480,1472" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: &#xA;Gets data of the current movie (Storyline, Rating, Number of ratings on IMDb, Maturity Rate, Duration, Type and Date).&#xA;&#xA;Pre Condition:&#xA;An IMDb page is opened(any page)&#xA;&#xA;Post Condition:&#xA;Output movie's data is not empty." DisplayName="IMDb_GetMovieData" sap:VirtualizedContainerService.HintSize="556,1660" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - Start" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;IMDb_GetMovieData, Execution Started.&quot;]" />
-    <TryCatch DisplayName="Try Getting the Current Movie Data, Catch Any Exception" sap:VirtualizedContainerService.HintSize="438,971" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message - Start" sap:VirtualizedContainerService.HintSize="514,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;IMDb_GetMovieData, Execution Started.&quot;]" />
+    <TryCatch DisplayName="Try Getting the Current Movie Data, Catch Any Exception" sap:VirtualizedContainerService.HintSize="514,1159" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -86,19 +87,20 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Action - Getting the Current Movie Data" sap:VirtualizedContainerService.HintSize="304,722" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Action - Getting the Current Movie Data" sap:VirtualizedContainerService.HintSize="476,910" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="MovieInfo" />
             <Variable x:TypeArguments="x:String" Name="MovieRate" />
             <Variable x:TypeArguments="x:String" Name="NumOfRatings" />
             <Variable x:TypeArguments="x:String" Name="MovieStory" />
+            <Variable x:TypeArguments="x:String" Name="MovieType" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Navigates to the movie link." BrowserType="Edge" DisplayName="Attach Browser - IMDb Page" sap:VirtualizedContainerService.HintSize="262,82" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="44be9a82b9ae3f3618bbe7b867341d5f" Selector="&lt;html app='msedge.exe' title='*IMDb*' /&gt;">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Navigates to the movie link." BrowserType="Edge" DisplayName="Attach Browser - IMDb Page" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="44be9a82b9ae3f3618bbe7b867341d5f" Selector="&lt;html app='msedge.exe' title='*IMDb*' /&gt;">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -115,7 +117,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:BrowserScope>
-          <Assign sap2010:Annotation.AnnotationText="Initalizes the default value of the output list before using it." DisplayName="Initializing the Output Movie Data List" sap:VirtualizedContainerService.HintSize="262,102" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign sap2010:Annotation.AnnotationText="Initalizes the default value of the output list before using it." DisplayName="Initializing the Output Movie Data List" sap:VirtualizedContainerService.HintSize="434,102" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="scg:List(x:String)">[out_MovieData]</OutArgument>
             </Assign.To>
@@ -128,13 +130,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Get the current movie data." BrowserType="Edge" DisplayName="Attach Browser - IMDb Movie Page" sap:VirtualizedContainerService.HintSize="262,82" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="1b601d16432b2dd95c16400a7d6b2137" Selector="&lt;html app='msedge.exe' title='*IMDb' /&gt;">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Get the current movie data." BrowserType="Edge" DisplayName="Attach Browser - IMDb Movie Page" sap:VirtualizedContainerService.HintSize="434,270" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="1b601d16432b2dd95c16400a7d6b2137" Selector="&lt;html app='msedge.exe' title='*IMDb' /&gt;">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Parallel sap2010:Annotation.AnnotationText="Reads all the movie's data in parallel." DisplayName="Parallel - Movies Data" sap:VirtualizedContainerService.HintSize="200,93" sap2010:WorkflowViewState.IdRef="Parallel_1">
+                <Parallel sap2010:Annotation.AnnotationText="Reads all the movie's data in parallel." DisplayName="Parallel - Movies Data" sap:VirtualizedContainerService.HintSize="200,93" sap2010:WorkflowViewState.IdRef="Parallel_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -142,9 +144,9 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Gets the rating value of the movie." DisplayName="Get Text - Rating Value" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                  <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Gets the rating value of the movie." DisplayName="Get Text - Rating Value" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="GetValue_5">
                     <ui:GetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="beb11368-3e6b-439c-be10-e1b154c4a0dd" InformativeScreenshot="922aca0d8028da0f5a6179dcbb0a66f8" Selector="&lt;webctrl tag='SPAN' parentclass='ratingValue' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="beb11368-3e6b-439c-be10-e1b154c4a0dd" InformativeScreenshot="922aca0d8028da0f5a6179dcbb0a66f8" Selector="&lt;webctrl parentid='__next' class='AggregateRatingButton__RatingScore*' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -159,14 +161,14 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:GetValue>
-                  <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Gets the number of ratings on IMDb." DisplayName="Get Text - Number of Ratings" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                  <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Gets the number of ratings on IMDb." DisplayName="Get Text - Number of Ratings" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="GetValue_6">
                     <ui:GetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="07723191-8605-4e75-86f5-1f8d58e91538" InformativeScreenshot="84bab6dc7338e42cd7387abf6a8f1490" Selector="&lt;webctrl parentid='title-overview-widget' tag='SPAN' parentclass='imdbRating' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="07723191-8605-4e75-86f5-1f8d58e91538" InformativeScreenshot="c24b061d9aa212e60a4e044b7983bba4" Selector="&lt;webctrl parentid='__next' class='AggregateRatingButton__TotalRatingAmount*' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -181,14 +183,14 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:GetValue>
-                  <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Gets movie's information (maturity rate, duration, type, date)" DisplayName="Get Text - Movie's Info" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                  <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Gets the type of the movie." DisplayName="Get Text - Movie Type" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="GetValue_7">
                     <ui:GetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c7772e35-fbef-4cb8-adc9-560f3f627346" InformativeScreenshot="229432103412bb1ab4e96010354d26a3" Selector="&lt;webctrl parentid='title-overview-widget' tag='DIV' class='subtext' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7a307f03-f0b2-47ee-a0a3-d0be8815809e" InformativeScreenshot="48ac35b276e40940c64f8a73286e9923" Selector="&lt;webctrl parentid='__next' class='ipc-chip-list GenresAndPlot__GenresChipList*' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -198,19 +200,76 @@
                       </ui:Target>
                     </ui:GetValue.Target>
                     <ui:GetValue.Value>
-                      <OutArgument x:TypeArguments="x:String">[MovieInfo]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[MovieType]</OutArgument>
                     </ui:GetValue.Value>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetValue>
+                  <ui:GetVisibleText FormattedText="{x:Null}" WordsInfo="{x:Null}" sap2010:Annotation.AnnotationText="Gets movie's information (maturity rate, duration and date)" DisplayName="Get Visible Text - Movie's Info" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="GetVisibleText_1">
+                    <ui:GetVisibleText.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8db34b4a-3a8b-4ce1-9ac0-e7533cbf714d" InformativeScreenshot="3394d97c061b052d711e2a69c4cd9b75" Selector="&lt;webctrl parentid='__next' class='TitleBlock__TitleMetaDataContainer*' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetVisibleText.Target>
+                    <ui:GetVisibleText.Text>
+                      <OutArgument x:TypeArguments="x:String">[MovieInfo]</OutArgument>
+                    </ui:GetVisibleText.Text>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetVisibleText>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,148" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,240" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Gets movie's information (maturity rate, duration, type, date)" DisplayName="Get Text - Movie's Info" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="GetValue_8">
+                          <ui:GetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c7772e35-fbef-4cb8-adc9-560f3f627346" InformativeScreenshot="229432103412bb1ab4e96010354d26a3" Selector="&lt;webctrl parentid='__next' class='TitleBlock__TitleMetaDataContainer*' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetValue.Target>
+                          <ui:GetValue.Value>
+                            <OutArgument x:TypeArguments="x:String">[MovieInfo]</OutArgument>
+                          </ui:GetValue.Value>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:GetValue>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:GetValue>
-                  <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Gets the movie's storyline." DisplayName="Get Text - Movie's Storyline" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                  </ui:CommentOut>
+                  <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Gets the movie's storyline." DisplayName="Get Text - Movie's Storyline" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="GetValue_9">
                     <ui:GetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2eab1473-2cec-423d-8ecd-91acb08d30af" InformativeScreenshot="346d9d07bf859e9404d9979ec32d2b9a" Selector="&lt;webctrl parentid='titleStoryLine' tag='P' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2eab1473-2cec-423d-8ecd-91acb08d30af" InformativeScreenshot="346d9d07bf859e9404d9979ec32d2b9a" Selector="&lt;webctrl parentid='__next' class='GenresAndPlot__TextContainerBreakpointXL*' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -225,7 +284,7 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -236,12 +295,15 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:BrowserScope>
-          <Sequence sap2010:Annotation.AnnotationText="This sequence contains all the add to collection activities that adds the scraped movie's data to the output data list." DisplayName="Add to Output Data List Sequence" sap:VirtualizedContainerService.HintSize="262,138" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence sap2010:Annotation.AnnotationText="This sequence contains all the add to collection activities that adds the scraped movie's data to the output data list." DisplayName="Add to Output Data List Sequence" sap:VirtualizedContainerService.HintSize="434,138" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="chars" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -249,49 +311,62 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's storyline to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Movie Storyline" sap:VirtualizedContainerService.HintSize="200,79" sap2010:WorkflowViewState.IdRef="AddToCollection`1_7" Item="[MovieStory.Trim]">
+            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's storyline to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Movie Storyline" sap:VirtualizedContainerService.HintSize="262,79" sap2010:WorkflowViewState.IdRef="AddToCollection`1_8" Item="[MovieStory.Trim]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </AddToCollection>
-            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's rate to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Movie Rate" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[MovieRate]">
+            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's rate to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Movie Rate" sap:VirtualizedContainerService.HintSize="262,64" sap2010:WorkflowViewState.IdRef="AddToCollection`1_9" Item="[MovieRate]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </AddToCollection>
-            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's number of ratings on IMDb to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Num of Ratings" sap:VirtualizedContainerService.HintSize="200,79" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[NumOfRatings]">
+            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's number of ratings on IMDb to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Num of Ratings" sap:VirtualizedContainerService.HintSize="262,79" sap2010:WorkflowViewState.IdRef="AddToCollection`1_10" Item="[NumOfRatings]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </AddToCollection>
-            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's maturity rate to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Maturity Rate" sap:VirtualizedContainerService.HintSize="200,79" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[MovieInfo.Split(&quot;|&quot;c)(0).Trim]">
+            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's maturity rate to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Maturity Rate" sap:VirtualizedContainerService.HintSize="262,79" sap2010:WorkflowViewState.IdRef="AddToCollection`1_11" Item="[MovieInfo.Split(&quot; &quot;c)(1).Trim]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </AddToCollection>
-            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's duration to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Duration" sap:VirtualizedContainerService.HintSize="200,79" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[MovieInfo.Split(&quot;|&quot;c)(1).Trim]">
+            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's duration to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Duration" sap:VirtualizedContainerService.HintSize="262,79" sap2010:WorkflowViewState.IdRef="AddToCollection`1_12" Item="[MovieInfo.Split(&quot; &quot;c)(2).Trim + &quot; &quot; + MovieInfo.Split(&quot; &quot;c)(3).Trim]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </AddToCollection>
-            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's type to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Type" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="AddToCollection`1_5" Item="[MovieInfo.Split(&quot;|&quot;c)(2).Trim]">
+            <Assign sap2010:Annotation.AnnotationText="Adding spaces between each word in the movie type.&#xA;For example: (ActionHorror) will be --&gt; (Action Horror)" DisplayName="Assign - Editting the Movie Type" sap:VirtualizedContainerService.HintSize="262,132" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[MovieType]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Regex.Replace(MovieType, “(\p{Lu})”, " $1").TrimStart]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's type to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Type" sap:VirtualizedContainerService.HintSize="262,64" sap2010:WorkflowViewState.IdRef="AddToCollection`1_13" Item="[MovieType.Replace(&quot; &quot;,&quot;,&quot;)]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </AddToCollection>
-            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's date to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Date" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="AddToCollection`1_6" Item="[MovieInfo.Split(&quot;|&quot;c)(3).Trim]">
+            <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Adds the scraped movie's date to the output data list." Collection="[out_MovieData]" DisplayName="Add To Collection - Date" sap:VirtualizedContainerService.HintSize="262,64" sap2010:WorkflowViewState.IdRef="AddToCollection`1_14" Item="[MovieInfo.Split(&quot; &quot;c)(0).Trim]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -299,7 +374,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </AddToCollection>
           </Sequence>
-          <Sequence DisplayName="Post Condition Sequence" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Post Condition Sequence" sap:VirtualizedContainerService.HintSize="434,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -328,7 +403,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:SystemException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:SystemException" sap:VirtualizedContainerService.HintSize="480,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -351,7 +426,7 @@
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="480,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -376,6 +451,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message - End" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;IMDb_GetMovieData, Execution Ended.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - End" sap:VirtualizedContainerService.HintSize="514,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;IMDb_GetMovieData, Execution Ended.&quot;]" />
   </Sequence>
 </Activity>

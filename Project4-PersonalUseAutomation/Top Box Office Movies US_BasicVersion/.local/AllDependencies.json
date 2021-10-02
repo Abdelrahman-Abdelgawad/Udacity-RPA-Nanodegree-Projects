@@ -5014,9 +5014,9 @@
     "restore": {
       "projectUniqueName": "Top Box Office Movies US_BasicVersion",
       "projectName": "Top Box Office Movies US_BasicVersion",
-      "projectPath": "E:\\MyProjects\\UiPath\\Project4_PersonalUseAutomation\\Top Box Office Movies US_BasicVersion\\.local",
+      "projectPath": "E:\\MyProjects\\UiPath\\Udacity\\Project4-PersonalUseAutomation\\Top Box Office Movies US_BasicVersion\\.local",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "E:\\MyProjects\\UiPath\\Project4_PersonalUseAutomation\\Top Box Office Movies US_BasicVersion\\.local"
+      "outputPath": "E:\\MyProjects\\UiPath\\Udacity\\Project4-PersonalUseAutomation\\Top Box Office Movies US_BasicVersion\\.local"
     },
     "frameworks": {
       "net461": {
@@ -5042,7 +5042,7 @@
             "version": "[21.4.3, 21.4.3]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\DELL\\AppData\\Local\\UiPath\\app-21.4.3\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\DELL\\AppData\\Local\\UiPath\\app-21.4.4\\runtime.json"
       }
     }
   }

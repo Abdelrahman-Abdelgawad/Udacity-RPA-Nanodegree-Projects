@@ -5097,9 +5097,9 @@
     "restore": {
       "projectUniqueName": "Sorting Annual Reports",
       "projectName": "Sorting Annual Reports",
-      "projectPath": "E:\\MyProjects\\UiPath\\Sorting Annual Reports\\.local",
+      "projectPath": "E:\\MyProjects\\UiPath\\Udacity\\Project1-SortingAnnualReports\\.local",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "E:\\MyProjects\\UiPath\\Sorting Annual Reports\\.local"
+      "outputPath": "E:\\MyProjects\\UiPath\\Udacity\\Project1-SortingAnnualReports\\.local"
     },
     "frameworks": {
       "net461": {
@@ -5125,7 +5125,7 @@
             "version": "[20.10.8, 20.10.8]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\DELL\\AppData\\Local\\UiPath\\app-21.4.0\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\DELL\\AppData\\Local\\UiPath\\app-21.4.4\\runtime.json"
       }
     }
   }
