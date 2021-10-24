@@ -1,6 +1,6 @@
 # Project3 - Calculate Client Security Hash
 
 
-Description:
+### Description:
 
 Generates the security hash for each client based on their personal information.
