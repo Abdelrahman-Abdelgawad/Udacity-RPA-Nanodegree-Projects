@@ -1,7 +1,7 @@
 # Project2 - Invoice Scrapping 
 
 
-Description:
+### Description:
 
 A process that will scrape relevant data from the invoices for further processing.
 The Robot will read through emails and download the invoices received in the form of an email attachment as a PDF.
@@ -12,6 +12,6 @@ And finally, the robot will email the spreadsheet to MyEmail when finished.
 ____________________________________________________________________________________________________________________________________
 	
 
-Walkthrough of the project: 
+### Recorded video for the process running End-To-End: 
 	
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/S39ulHRMbFA/0.jpg)](https://www.youtube.com/watch?v=S39ulHRMbFA)
