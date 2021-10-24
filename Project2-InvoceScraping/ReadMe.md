@@ -14,4 +14,4 @@ ________________________________________________________________________________
 
 ### Recorded video for the process running End-To-End: 
 	
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/S39ulHRMbFA/0.jpg)](https://www.youtube.com/watch?v=S39ulHRMbFA)
+[![Recorded video for the process running End-To-End](https://img.youtube.com/vi/S39ulHRMbFA/0.jpg)](https://www.youtube.com/watch?v=S39ulHRMbFA)
